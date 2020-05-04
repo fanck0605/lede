@@ -8,7 +8,8 @@
 	bind interfaces only = yes
 	deadtime = 30
 	enable core files = no
-	invalid users = root
+	guest account = root
+#	invalid users = root
 	local master = yes
 	map to guest = Bad User
 	max protocol = SMB2
