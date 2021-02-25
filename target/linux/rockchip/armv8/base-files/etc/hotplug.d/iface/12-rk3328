@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ETHTOOL=/usr/sbin/ethtool
+
+case "$(board_name)" in
+friendlyarm,nanopi-r2s)
+	[ "$(uci get network.$INTERFACE.ifname)" = "eth0" ] && \
+	[ "$ACTION" = "ifup" ] && \
+	$ETHTOOL -K eth0 rx off tx off
+	;;
+esac
